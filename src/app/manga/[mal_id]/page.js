@@ -10,6 +10,7 @@ const Page = ({ params }) => {
 
   const [animeData, setAnimeData] = useState([]);
   
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchAnime = async () => {
     try {
       const res = await axios.get(`https://api.jikan.moe/v4/anime/${mal_id}`);
@@ -22,7 +23,7 @@ const Page = ({ params }) => {
 
   useEffect(() => {
     fetchAnime();
-  }, [mal_id]);  
+  }, [fetchAnime, mal_id]);  
   
   return (
     <div>

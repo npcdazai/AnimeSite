@@ -1,8 +1,10 @@
-
+import ContactForm from "../components/ContactForm"
 
 const ContactUs = () => {
   return (
-    <div>Contact Us page</div>
+    <div>
+      <ContactForm/>
+    </div>
   )
 }
 
