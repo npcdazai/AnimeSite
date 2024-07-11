@@ -3,10 +3,10 @@ import Link from 'next/link';
 // import Nav from './Nav';
 const Header = () => {
     return (
-        <div style={{backgroundColor:"rgb(45 43 68 / 89%"}} className="shadow-md shadow-black z-10 top-0 fixed w-full p-2 flex justify-between items-center">
-            <div className="flex items-center space-x-6">
+        <div style={{backgroundColor:"rgb(45 43 68 / 89%"}} className="shadow-md shadow-black z-10 top-0 fixed w-full p-4 h-28 flex justify-between items-center">
+            <div className="flex items-center space-x-6 ml-2">
                 <Link href="/">
-                    <Image src="/logo.png" alt="Logo" width={150} height={35} />
+                    <Image src="/logo.png" alt="Logo" width={150} height={30} />
                 </Link>
                 <input
                     type="text"
