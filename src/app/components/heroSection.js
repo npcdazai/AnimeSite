@@ -16,7 +16,7 @@ const HeroSection = ({ title, Our_Story, ImageUrl }) => {
               <button>Explore</button>
             </Link>
           </div>
-          <div className={heroStyles.hero_image}>
+          <div style={{height:"721px"}} className={heroStyles.hero_image}>
             <Image
               src={ImageUrl}
               alt="series_Image"
