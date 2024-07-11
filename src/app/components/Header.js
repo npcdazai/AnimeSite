@@ -34,11 +34,9 @@ const Header = () => {
             Filter
           </button>
         </div>
-        <div>{/* <Nav/> */}</div>
       </div>
-
-      {/* Sidebar */}
-      <div style={{ backgroundColor: "rgb(45 43 68 / 89%)" }}
+      <div
+        style={{ backgroundColor: "rgb(45 43 68 / 89%)" }}
         className={`fixed top-0 left-0 w-64 h-full z-20 transform ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out`}
@@ -62,9 +60,7 @@ const Header = () => {
                 d="M6 18L18 6M6 6l12 12"
               />
             </svg>
-            {/* <span>Cancel</span> */}
           </div>
-
           <Nav />
           <div className="flex space-x-2">
             <span className="bg-pink-500 text-white px-2 py-1 rounded-md">
@@ -79,7 +75,12 @@ const Header = () => {
 
       {/* Overlay */}
       {sidebarOpen && (
-        <div style={{backgroundColorr: "rgba(0, 0, 0, 0.5)" ,backdropFilter:"blur(100rem)"}} className=" fixed inset-0 opacity-50 z-10"
+        <div
+          style={{
+            backgroundColorr: "rgba(0, 0, 0, 0.5)",
+            backdropFilter: "blur(100rem)",
+          }}
+          className=" fixed inset-0 opacity-50 z-10"
           onClick={() => setSidebarOpen(false)}
         ></div>
       )}
