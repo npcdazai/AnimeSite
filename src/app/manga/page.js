@@ -20,9 +20,9 @@ const Page = () => {
   }, []);
 
   return (
-    <div className="flex w-screen gap-5 mt-36 align-middle flex-wrap">
+    <div className="flex gap-5 mt-36 align-middle flex-wrap">
       {animeData.map((val) => {
-        return<div className="p-6" key={val.mal_id}><MovieCard {...val}/></div>
+        return<div key={val.mal_id}><MovieCard {...val}/></div>
       })}
     </div>
   );
