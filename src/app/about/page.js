@@ -5,7 +5,6 @@ const About = () => {
   return (
     <div>
       <HeroSection ImageUrl ={"/discussion.png"} title={"About US"} Our_Story={"Know About US"}  />
-
     </div>
   )
 }

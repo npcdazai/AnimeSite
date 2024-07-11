@@ -1,28 +1,41 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from 'react'
 
 const MovieCard = (val) => {
-    const{mal_id,image_url,title,episodes,status,synopsis} = val
-  return (
-<div className="max-w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
-    <Link href={`/manga`}>
-        <Image className="rounded-t-lg" src={val?.images?.jpg?.image_url} alt="anime" width={250} height={200} />
-    </Link>
-    <div className="p-5">
-        <a href="#">
-            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{val?.titles[0]?.title}</h5>
-        </a>
-        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{val?.synopsis}</p>
-        <Link href={`/manga/${mal_id}`} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </Link>
-    </div>
-</div>
+    const { mal_id, image_url, title, episodes, status } = val
+    const [isHovered, setIsHovered] = useState(false)
 
-  )
+    return (
+        <div
+            className="relative max-w-72 max-h-96 bg-gray-800 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 ease-in-out transform hover:scale-105"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+        >
+            <Link href={`/manga/${mal_id}`}>
+                <Image
+                    className="w-full  h-3/5 object-cover"
+                    src={val?.images?.jpg?.image_url}
+                    alt="anime"
+                    width={288}
+                    height={288}
+                />
+            </Link>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4 h-1/2 flex flex-col justify-end">
+                <h5 className="text-white text-xl font-bold mb-2 break-words">{val?.titles[0]?.title}</h5>
+                <div className="flex items-center justify-between">
+                    <span className="text-sm bg-green-400 text-white px-2 py-1 rounded-lg">{status}</span>
+                </div>
+            </div>
+            {isHovered && (
+                <div className="absolute inset-0 bg-black bg-opacity-75 flex justify-center items-center">
+                    <Link href={`/manga/${mal_id}`} className="bg-pink-500 text-white text-sm font-semibold py-2 px-4 rounded-full hover:bg-pink-600 transition">
+                        Watch now
+                    </Link>
+                </div>
+            )}
+        </div>
+    )
 }
 
 export default MovieCard
