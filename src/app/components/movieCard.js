@@ -12,6 +12,7 @@ const MovieCard = (val) => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
+            <div>
             <Link href={`/manga/${mal_id}`}>
                 <Image
                     className="w-full  h-3/5 object-cover"
@@ -21,6 +22,7 @@ const MovieCard = (val) => {
                     height={288}
                 />
             </Link>
+            </div>
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4 h-1/2 flex flex-col justify-end">
                 <h5 className="text-white text-xl font-bold mb-2 break-words">{val?.titles[0]?.title}</h5>
                 <div className="flex items-center justify-between">

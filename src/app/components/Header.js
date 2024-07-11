@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import Nav from './Nav';
+// import Nav from './Nav';
 const Header = () => {
     return (
         <div style={{backgroundColor:"rgb(45 43 68 / 89%"}} className="shadow-md shadow-black z-10 top-0 fixed w-full p-2 flex justify-between items-center">
@@ -17,7 +17,7 @@ const Header = () => {
                 
             </div>
             <div>
-              <Nav/>
+              {/* <Nav/> */}
             </div>
             <div className="flex items-center space-x-4">
                 <Link href="/watch2gether" className="text-white">Watch2gether</Link>
