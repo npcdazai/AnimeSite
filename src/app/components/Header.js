@@ -1,22 +1,38 @@
-import style from "@/app/styles/navbar.module.css"
-import Image from "next/image"
-import Link from "next/link"
-import Nav from "./Nav"
-
-const header = () => {
-  return (
-    <header>
-
-        <div className="bg-[#2d2b44] shadow-md shadow-black p-2 flex justify-between items-center">
-            <div className="flex space-x-6">
-              <Link href="/">
-              <Image src="/logo.png" alt="" width={150} height={35}/>
-              </Link>
+import Image from 'next/image';
+import Link from 'next/link';
+import Nav from './Nav';
+const Header = () => {
+    return (
+        <div style={{backgroundColor:"rgb(45 43 68 / 89%"}} className="shadow-md shadow-black z-10 top-0 fixed w-full p-2 flex justify-between items-center">
+            <div className="flex items-center space-x-6">
+                <Link href="/">
+                    <Image src="/logo.png" alt="Logo" width={150} height={35} />
+                </Link>
+                <input
+                    type="text"
+                    placeholder="Search anime..."
+                    className="p-2 h-16 w-60 rounded-md bg-white text-black"
+                />
+                <button className="bg-black text-white p-2 w-24 rounded-lg">Filter</button>
+                
             </div>
-            <Nav/>
+            <div>
+              <Nav/>
+            </div>
+            <div className="flex items-center space-x-4">
+                <Link href="/watch2gether" className="text-white">Watch2gether</Link>
+                <Link href="/random" className="text-white">Random</Link>
+                <div className="flex space-x-2">
+                    <span className="bg-pink-500 text-white px-2 py-1 rounded-md">EN</span>
+                    <span className="bg-gray-500 text-white px-2 py-1 rounded-md">JP</span>
+                </div>
+                <Link href="/community" className="text-white">Community</Link>
+                <Link href="/login">
+                    <button className="bg-pink-500 text-white px-4 py-2 rounded-md">Login</button>
+                </Link>
+            </div>
         </div>
-    </header>
-  )
-}
+    );
+};
 
-export default header
+export default Header;

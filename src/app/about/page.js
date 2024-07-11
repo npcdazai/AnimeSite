@@ -1,6 +1,5 @@
 import Image from "next/image"
 import HeroSection from "../components/heroSection"
-
 const About = () => {
   return (
     <div>

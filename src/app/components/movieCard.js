@@ -28,7 +28,7 @@ const MovieCard = (val) => {
                 </div>
             </div>
             {isHovered && (
-                <div className="absolute inset-0 bg-black bg-opacity-75 flex justify-center items-center">
+                <div className="absolute inset-0 bg-[rgba(0, 0, 0, .3)] bg-opacity-75 flex justify-center items-center backdrop-blur-md">
                     <Link href={`/manga/${mal_id}`} className="bg-pink-500 text-white text-sm font-semibold py-2 px-4 rounded-full hover:bg-pink-600 transition">
                         Watch now
                     </Link>
