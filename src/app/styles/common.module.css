@@ -141,3 +141,8 @@
     }
 
 }
+@media (max-width: 768px) {
+    .grid_two_section {
+      grid-template-columns: 1fr;
+    }
+  }
