@@ -3,9 +3,9 @@ import Link from "next/link";
 const Nav = () => {
   return (
     <div>
-      <nav className="relative p-6 bg-pink-500 text-white px-2 py-1 rounded-xl">
+      <nav className="relative p-6 text-white px-2 py-1 rounded-xl">
         <div className="text-white ">
-          <ul className="flex justify-around align-middle gap-12  ">
+          <ul className="flex justify-around align-middle gap-12 flex-col ">
             <li className="h-fit grid place-items-center rounded-2xl hover:text-black p-2 ">
               <Link href="/">Home</Link>
             </li>
