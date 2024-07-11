@@ -3,7 +3,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Nav from "./Nav";
-import CancelIcon from "@mui/icons-material/Cancel";
 
 const Header = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
