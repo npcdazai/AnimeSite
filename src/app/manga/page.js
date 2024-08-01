@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import MovieCard from "../components/movieCard";
+import {useContext} from "react"
 
 const Page = () => {
   const [animeData, setAnimeData] = useState([]);

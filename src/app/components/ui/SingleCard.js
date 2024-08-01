@@ -3,21 +3,21 @@ import React from "react";
 
 const SingleCard = ({img}) => {
   return (
-    <div className="p-8">
-      <div>
-        <div className="bg-transparent ">
-          <ul className="list-none m-0 p-0">
-            <li className="border-none">
-              <div className="w-16 flex-shrink-0 pb-20 z-[3]">
-                <Image
-                src={img}
-                width={250}
-                height={200}
-                alt=""
-                />
-              </div>
-            </li>
-          </ul>
+    <div className="bg-gray-800 p-4 rounded-lg flex items-center space-x-4 max-w-md mx-auto">
+      <Image
+        src={img}
+        alt="My Hero Academia Season 6"
+        className="w-20 h-20 object-cover rounded-lg"
+        width={250}
+        height={250}
+      />
+      <div className="text-white">
+        <h3 className="text-lg font-semibold">My Hero Academia Season 6</h3>
+        <div className="flex items-center space-x-2 mt-1">
+          <span className="bg-green-500 text-xs px-2 py-1 rounded">cc 25</span>
+          <span className="bg-blue-500 text-xs px-2 py-1 rounded">mic 25</span>
+          <span className="bg-gray-700 text-xs px-2 py-1 rounded">25</span>
+          <span className="text-gray-400 text-sm">• TV</span>
         </div>
       </div>
     </div>
