@@ -25,12 +25,12 @@ const MyHeroAcademiaSeason7 = ({
       className="bg-cover bg-center h-screen opacity-35 absolute min-h-screen w-full"
     />
     <div className="bg-cover bg-center h-screen text-white min-h-screen flex justify-center items-center pt-28 w-full">
-      <div className="w-full p-6 flex justify-between bg-opacity-50 backdrop-blur-lg">
+      <div className="w-full p-6 flex justify-between bg-opacity-50 backdrop-blur-md">
         <div className="flex flex-col md:flex-row p-7">
           <div className="md:w-1/3">
             <Image
               src={image}
-              alt="My Hero Academia Season 7"
+              alt="Anime Images"
               className="rounded-md"
               width={250}
               height={200}
