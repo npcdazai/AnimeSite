@@ -3,6 +3,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Nav from "./Nav";
+import { RiMenuUnfoldFill } from "react-icons/ri";
+import { RiMenuUnfold4Fill } from "react-icons/ri";
 
 const Header = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -18,7 +20,7 @@ const Header = () => {
             className="text-white"
             onClick={() => setSidebarOpen(!sidebarOpen)}
           >
-            Menu
+            <RiMenuUnfoldFill />
           </button>
         </div>
         <div className="flex items-center space-x-6 ml-2">
