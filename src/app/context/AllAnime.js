@@ -1,25 +1,30 @@
-// import { createContext, useState, useContext } from "react";
-// export const AllAnimeContext = createContext();
+"use client";
 
-// export const AllAnimeProvider = (prop) => {
-//   const [animeData, setAnimeData] = useState([]);
+import axios from "axios";
+import { createContext, useState, useContext, useEffect } from "react";
 
-//   const fetchAnime = async () => {
-//     try {
-//       const res = await axios.get("https://api.jikan.moe/v4/anime");
-//       console.log(res.data.data);
-//       setAnimeData(res.data.data);
-//     } catch (err) {
-//       console.log(err);
-//     }
-//   };
-//   useEffect(() => {
-//     fetchAnime();
-//   }, []);
+export const AllAnimeContext = createContext();
 
-//   return (
-//     <AllAnimeContext.Provider value={animeData}>
-//       {prop.children}
-//     </AllAnimeContext.Provider>
-//   );
-// };
+export const AllAnimeProvider = (props) => {
+  const [animeData, setAnimeData] = useState([]);
+  const API = "https://api.jikan.moe/v4/anime";
+
+  const fetchAnime = async () => {
+    try {
+      const res = await axios.get(API);
+      setAnimeData(res.data.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchAnime();
+  }, []);
+
+  return (
+    <AllAnimeContext.Provider value={animeData}>
+      {props.children}
+    </AllAnimeContext.Provider>
+  );
+};

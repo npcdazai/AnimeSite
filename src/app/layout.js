@@ -1,7 +1,7 @@
 import { Inter, Mulish } from "next/font/google";
 import "./globals.css";
 import  Header from "./components/Header";
-
+import {AllAnimeProvider} from "@/app/context/AllAnime"
 import { Roboto } from 'next/font/google'
  
 const mulish = Mulish({
@@ -21,10 +21,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={mulish.className}>
+      <AllAnimeProvider>
       <body className={inter.className}>
         <Header/>
         {children}
         </body>
+      </AllAnimeProvider>
+      
     </html>
   );
 }

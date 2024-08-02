@@ -17,7 +17,7 @@ const Page = ({ params }) => {
     try {
       const res = await axios.get(`https://api.jikan.moe/v4/anime/${mal_id}`);
       console.log(res.data.data);
-      setAnimeData([res.data.data]);
+      setAnimeData([res.data.data]);s
     } catch (err) {
       console.log(err);
     }
@@ -26,6 +26,7 @@ const Page = ({ params }) => {
   useEffect(() => {
     fetchAnime();
   }, [fetchAnime, mal_id]);
+
 
   return (
     <div>
@@ -38,7 +39,13 @@ const Page = ({ params }) => {
               title_japanese={item?.title_japanese}
               title_synonyms={item?.title_synonyms}
               year={item?.season}
-              producers={item?.producers?.name}
+              status={item?.status}
+              score={item?.score}
+              studios={item?.studios[0]?.name}
+              producers={item?.producers[0]?.name}
+              genres={item?.genres[0]?.name}
+              genres1={item?.genres[1]?.name}
+              genres2={item?.genres[2]?.name}
             />
           </div>
         );
