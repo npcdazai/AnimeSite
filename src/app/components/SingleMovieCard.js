@@ -1,10 +1,11 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { IoLogoWhatsapp } from "react-icons/io";
 import { IoLogoFacebook } from "react-icons/io";
 import { IoLogoInstagram } from "react-icons/io5";
 import SingleCard from "./ui/SingleCard";
+import axios from "axios";
 // import Manga from "@/app/manga/page"
 const SingleMovieCard = ({
   image,
@@ -20,7 +21,12 @@ const SingleMovieCard = ({
   producers,
   status,
   score,
+  params,
+  mal_id,
 }) => {
+  // const mal_id = params.mal_id;
+
+
   return (
     <div className="h-[100%]">
       <div
@@ -116,12 +122,12 @@ const SingleMovieCard = ({
                 <span className="font-bold">Genres: </span>
               </p>
               <span className="bg-gray-700 px-2 py-1 rounded-md">{genres}</span>
-              <span className="bg-gray-700 px-2 py-1 rounded-md">
+              {/* <span className="bg-gray-700 px-2 py-1 rounded-md">
                 {genres1}
               </span>
               <span className="bg-gray-700 px-2 py-1 rounded-md">
                 {genres2}
-              </span>
+              </span> */}
             </div>
             <p className="mt-2">
               <span className="font-bold">Studios: </span> {studios}
@@ -130,16 +136,6 @@ const SingleMovieCard = ({
               <span className="font-bold">Producers: </span> {producers}
             </p>
           </div>
-        </div>
-      </div>
-      <div className="flex flex-row">
-        <div className="w-9/12">
-        Recommended for you
-    
-        </div>
-        <div className="w-2/6 text-white text-center ">
-          <p>Related Anime</p>
-          <SingleCard />
         </div>
       </div>
     </div>

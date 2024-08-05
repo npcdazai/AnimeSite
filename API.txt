@@ -1,0 +1,7 @@
+related = "https://api.jikan.moe/v4/anime/{id}/relations"
+reviews ="https://api.jikan.moe/v4/anime/{id}/reviews"
+serach = "https://api.jikan.moe/v4/anime"
+videos = "https://api.jikan.moe/v4/anime/{id}/videos"
+episode = "https://api.jikan.moe/v4/anime/{id}/videos/episodes
+NewAnime = https://api.jikan.moe/v4/anime/{id}/news
+pictures = https://api.jikan.moe/v4/anime/{id}/statistics
